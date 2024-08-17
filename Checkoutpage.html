@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <style>
+            #column1{
+    width:50%;
+    padding:10px;
+}
+#red{
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+}
+.red input{
+    width:45%;
+}
+#row{
+    display:flex;
+    width:75%;
+
+}
+#column2{
+    width:50%;
+    padding:10px;
+}
+.price{
+    display:flex;
+    justify-content:space-between;
+}
+#container{
+    display:flex;
+    padding:5px;
+}
+#column3{
+    width:25%;
+    border:2px solid;
+    padding:10px;
+}
+#row{
+    background-color:rgb(235, 232, 232);
+    border:2px solid;
+    padding:10px;
+}
+        </style>
+    </head>
+    <body>
+        <h3 style="background-color:lightgreen;">
+            <center>
+                Responsive Checkout Form
+            </center>
+        </h3>
+        <h3 style="background-color:lightblue;">
+            <center>
+                LET'S GO TOGETHER
+            </center>
+        </h3>
+        <div id="container">
+        <div id="row">
+        <div id="column1">
+        <h3>
+            <mark style="background-color:lightblue;">PERSONAL DETAILS</mark>
+        </h3>
+        <form>
+            <label>
+                Full Name
+            </label><br>
+            <input id="input1" type="text"><br><br>
+            <label>
+                Email
+            </label><br>
+            <input id="input2" type="email"><br><br>
+            <label>
+                Address
+            </label><br>
+            <input id="input3" type="text"><br><br>
+            <label>
+                City
+            </label><br>
+            <input di="input4" type="text"><br><br>
+            <div class="red">
+                <div>
+            <label>
+                State
+            </label><br>
+            <input id="input5" type="text">
+            </div>
+            <div>
+            <label>
+                Zip
+            </label><br>
+            <input id="input6" type="number">
+            </div>
+            </div>
+        </div>
+        <div id="column2">
+            <h3 style=" background-color:lightblue;">
+                Select Package
+            </h3>
+            <label>
+                Choose your tour package
+            </label>
+            <select>
+                <option>
+                    pkg 1
+                </option>
+                <option>
+                    pkg 2
+                </option>
+            </select>
+            <h3 style="background-color:lightblue;">
+                Payment
+            </h3>
+            <label>
+                Accepeted Cards
+            </label>
+            <div id="cardImages">
+                <img src="https://1000logos.net/wp-content/uploads/2017/06/VISA-Logo-1976.png" alt="Visa Card" width="40px">
+
+                <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/092011/mastercard.png?itok=umOYRlA4" alt="Master card" width="40px">
+
+                <img src="https://www.discover.com/company/images/newsroom/media-downloads/DGN_AcceptanceMark.png" alt="Discover Card" width="40px">
+
+                <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/249_Paypal_Credit_Card_logo-512.png" alt="Paypal Card" width="40px">
+            </div>
+            <label>
+                Name on Card
+            </label><br>
+            <input id="input7" type="text"><br><br>
+            <label>
+                Credit Card Number
+            </label><br>
+            <input id="input8" type="number"><br><br>
+            <label>
+                Exp Month
+            </label><br>
+            <input id="input9" type="date"><br><br>
+            <div class="red">
+                <div>
+            <label>
+            Exp Year
+            </label><br>
+            <input id="input10" type="number">
+            </div>
+            <div>
+            <label>
+                CVV
+            </label><br>
+            <input id="input11" type="number">
+            </div>
+            </div>
+            </form>
+        </div>
+        </div>
+        <div id="column3">
+            <h4>
+                Cost of Per Member
+            </h4>
+            <div class="price">
+                <h4>
+                    Female
+                </h4>
+                <p>
+                    $5,000
+                </p>
+            </div>
+            <div class="price">
+                <h4>
+                    Male
+                </h4>
+                <p>
+                    $5,000
+                </p>
+            </div>
+            <div class="price">
+                <h4>
+                    Kid
+                </h4>
+                <p>
+                    $4,000
+                </p>
+            </div>
+            <div class="price">
+                <h4>
+                    Family (4 members) Discount
+                </h4>
+                <p>
+                    $16,000
+                </p>
+            </div>
+            <hr>
+            <div class="price">
+                <h4>
+                    Total
+                </h4>
+                <p>
+                    $30,000
+                </p>
+            </div>
+        </div>
+        </div>
+        <div id="tour">
+           <h2>Number of Travelers</h2>
+
+    <div class="form-group">
+
+      <button id="add-kid">Add Kid</button>
+
+      <button id="add-female">Add Female</button>
+
+      <button id="add-male">Add Male</button>
+
+    </div>
+
+    <div class="form-group">
+
+      <p>Number of Kids: <span id="kid-count">0</span> | Number of Females: <span id="female-count">0</span> | Number of Males: <span id="male-count">0</span></p>
+
+    </div>
+
+    <button class="button">CHECKOUT</button>
+
+  </div>
+        </div>
+        <script>
+            const addKidBtn = document.getElementById('add-kid');
+
+    const addFemaleBtn = document.getElementById('add-female');
+
+    const addMaleBtn = document.getElementById('add-male');
+
+    const kidCount = document.getElementById('kid-count');
+
+    const femaleCount = document.getElementById('female-count');
+
+    const maleCount = document.getElementById('male-count');
+
+    addKidBtn.addEventListener('click', () => {
+
+      let currentKidCount = parseInt(kidCount.textContent);
+
+      currentKidCount++;
+
+      kidCount.textContent = currentKidCount;
+
+    });
+
+    addFemaleBtn.addEventListener('click', () => {
+
+      let currentFemaleCount = parseInt(femaleCount.textContent);
+
+      currentFemaleCount++;
+
+      femaleCount.textContent = currentFemaleCount;
+
+    });
+
+    addMaleBtn.addEventListener('click', () => {
+
+      let currentMaleCount = parseInt(maleCount.textContent);
+
+      currentMaleCount++;
+
+      maleCount.textContent = currentMaleCount;});
+        </script>
+    </body>
+</html>
